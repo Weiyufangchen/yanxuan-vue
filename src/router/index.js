@@ -1,15 +1,44 @@
+/*
+路由器模块
+ */
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+// 引入一级路由
+import Home from '../pages/Home/Home'
+import Shiwu from '../pages/Shiwu/Shiwu'
+import Category from '../pages/Category/Category'
+import Cart from '../pages/Cart/Cart'
+import Profile from '../pages/Profile/Profile'
 
-export default new Router({
+// 声明使用路由器
+Vue.use(VueRouter)
+
+export default new VueRouter({
   routes: [
     {
+      path: '/home',
+      component: Home,
+    },
+    {
+      path: '/shiwu',
+      component: Shiwu
+    },
+    {
+      path: '/category',
+      component: Category
+    },
+    {
+      path: '/cart',
+      component: Cart
+    },
+    {
+      path: '/profile',
+      component: Profile
+    },
+    {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      component: Home
     }
   ]
 })
