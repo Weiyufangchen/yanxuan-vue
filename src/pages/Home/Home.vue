@@ -4,7 +4,8 @@
     <HomeHeader/>
     <!--首页轮播图-->
     <Carousel/>
-    <!--首页list-->
+    <!--首页购物分类-->
+    <ShopLists/>
   </div>
 </template>
 
@@ -12,17 +13,18 @@
   import BScorll from 'better-scroll'
   import HomeHeader from './HomeHeader/HomeHeader'
   import Carousel from './Carousel/Carousel'
+  import ShopLists from './ShopLists/ShopLists'
   export default {
     name: "Home",
-    computed: {
-
+    computed: {},
+    mounted() {
+      this.$store.dispatch('getHomeData')
     },
-    methods: {
-
-    },
+    methods: {},
     components: {
       HomeHeader,
-      Carousel
+      Carousel,
+      ShopLists
     }
   }
 </script>
@@ -30,7 +32,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../assets/stylus/mixins.styl'
   .home
-    width: 100%
-
-
+    width: 10rem
+    margin-right: auto
+    margin-left: auto
 </style>

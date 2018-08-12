@@ -1,34 +1,16 @@
 <template>
-  <div>
-    <div class="home-container">
-      <div class="swiper-container">
+    <div class="indexFloor">
+      <div class="swiper-container-banner">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="width: 750px">
+          <div class="swiper-slide" style="width: 750px"
+          v-for="item in homeData.cateList" :key="item.id">
             <a href="javascript:;">
-              <img src="https://yanxuan.nosdn.127.net/e8404dffe57eff5100feb721f9380386.jpg?imageView&amp;thumbnail=750x0&amp;quality=75">
-            </a>
-          </div>
-          <div class="swiper-slide" style="width: 750px">
-            <a href="javascript:;">
-              <img src="https://yanxuan.nosdn.127.net/e8404dffe57eff5100feb721f9380386.jpg?imageView&amp;thumbnail=750x0&amp;quality=75">
-            </a>
-          </div>
-          <div class="swiper-slide" style="width: 750px">
-            <a href="javascript:;">
-              <img src="https://yanxuan.nosdn.127.net/e8404dffe57eff5100feb721f9380386.jpg?imageView&amp;thumbnail=750x0&amp;quality=75">
-            </a>
-          </div>
-          <div class="swiper-slide" style="width: 750px">
-            <a href="javascript:;">
-              <img src="https://yanxuan.nosdn.127.net/e8404dffe57eff5100feb721f9380386.jpg?imageView&amp;thumbnail=750x0&amp;quality=75">
-            </a>
-          </div>
-          <div class="swiper-slide" style="width: 750px">
-            <a href="javascript:;">
-              <img src="https://yanxuan.nosdn.127.net/e8404dffe57eff5100feb721f9380386.jpg?imageView&amp;thumbnail=750x0&amp;quality=75">
+              <img :src="item.bannerUrl" alt="image">
             </a>
           </div>
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
       <div class="service-policy">
         <ul class="grow">
@@ -38,28 +20,63 @@
               <span>网易自营品牌</span>
             </a>
           </li>
+          <li class="item">
+            <a href="javascript:;">
+              <i></i>
+              <span>30天无忧退货</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="javascript:;">
+              <i></i>
+              <span>48小时快速退款</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
+  import Swiper from 'swiper'
+  import 'swiper/dist/css/swiper.min.css'
+  import {mapState} from 'vuex'
   export default {
-    name: "Carousel"
+    name: "Carousel",
+    data () {
+      return {
+
+      }
+    },
+    computed: {
+      ...mapState(['homeData'])
+    },
+    watch: {
+      homeData(val){
+        this.$nextTick(() => {
+          new Swiper('.swiper-container-banner',{
+            loop: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+          })
+        })
+      }
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../../assets/stylus/mixins.styl'
-  .home-container
-    height: 4rem
+  .indexFloor
     margin-top 148px
-    margin-bottom .27rem
+    margin-bottom .2667rem
     background-color: #fff
-    .swiper-container
+    .swiper-container-banner
       width: 100%
-      height: 100%
+      height: 5.333rem
+      position: relative
+      overflow: hidden
+      z-index: 1
       .swiper-slide
         display: flex
         justify-content: center
@@ -72,6 +89,37 @@
             width: 100%
             height: 100%
             background-color: #f9f9f9
-
-
+    .service-policy
+      background-color: #fff
+      .grow
+        width: 100%
+        height: .96rem
+        padding: 0 .4rem
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        zoom 1
+        .item
+          flex: 1
+          float: left
+          a
+            display: inline-block
+            vertical-align middle
+            height: .42667rem
+            i
+              display: inline-block
+              vertical-align middle
+              background-repeat no-repeat
+              background-size 100% 100%
+              width: .42667rem
+              height: .42667rem
+              font-style: normal
+              background-image: url(http://yanxuan.nosdn.127.net/cae45612b8aae577d8bd73338e2fc02c.png)
+            span
+              font-size: .32rem
+              color #333333
+              margin-left .10667rem
+              line-height: 0.42667rem
+              display: inline-block
+              vertical-align middle
 </style>
