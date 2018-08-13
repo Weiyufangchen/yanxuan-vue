@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--recommends-->
+    <!--为你推荐-->
     <div class="recommends">
       <div class="container">
         <div class="module-title">为你推荐</div>
