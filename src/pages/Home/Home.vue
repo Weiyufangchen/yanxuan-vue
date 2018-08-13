@@ -33,6 +33,7 @@
   @import '../../assets/stylus/mixins.styl'
   .home
     width: 10rem
+    padding-bottom: 1.30667rem
     margin-right: auto
     margin-left: auto
 </style>

@@ -2,7 +2,6 @@
 ajax请求函数模块
  */
 import axios from 'axios'
-
 export default function ajax(url ='', data ={}, type = 'GET') {
   // 返回一个自己创建的promise对象，为了能得到的不是response，而是能得到response.data的数据
   return new Promise(function (resolve, reject) {

@@ -1,12 +1,16 @@
 <template>
   <div>
-    shiwu
+    <ShiwuHeader/>
   </div>
 </template>
 
 <script>
+  import ShiwuHeader from './ShiwuHeader/ShiwuHeader'
   export default {
-    name: "Shiwu"
+    name: "Shiwu",
+    components: {
+      ShiwuHeader
+    }
   }
 </script>
 
