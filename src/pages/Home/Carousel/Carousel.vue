@@ -58,6 +58,9 @@
             loop: true,
             // 如果需要分页器
             pagination: '.swiper-pagination',
+          //  是否自动轮播
+            autoplay : 2000,
+            // autoplayDisableOnInteraction : false
           })
         })
       }
@@ -89,6 +92,16 @@
             width: 100%
             height: 100%
             background-color: #f9f9f9
+      .swiper-pagination
+        bottom: .4rem
+        width: 100%
+        .swiper-pagination-bullet
+          width: .53333rem
+          height: .05333rem
+          display: inline-block
+          background: #fff
+          opacity: .4
+          border-radius: 0
     .service-policy
       background-color: #fff
       .grow

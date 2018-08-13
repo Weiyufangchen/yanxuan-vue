@@ -2081,7 +2081,7 @@
                 font-size: .32rem
                 line-height: .45333rem
               .icon-new
-                background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/new-5e42f2db1f.png);
+                background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/new-5e42f2db1f.png)
                 height: .42667rem
                 width: .85333rem;
                 display: inline-block;
@@ -2091,8 +2091,6 @@
               .icon
                 display: block;
                 margin-top: .13333rem
-
-
           img
             width: 100%
             height: 100%
@@ -2426,5 +2424,4 @@
         .status.gradientPrice, .status.presell
           background-color: #f48f18
           float: left
-
 </style>

@@ -9,12 +9,13 @@ import {
 
 export default {
 // 异步获取首页数据
-   async getHomeData ({commit}) {
+   async getHomeData ({commit}, cb) {
   //  调用接口请求函数，获取数据
     const result = await reqHomeData()
     if (result.code === 0) {  // 成功获取
       const homeData = result.data
       commit(RECEIVE_HOMEDATA, {homeData})
+      cb && cb()
     }
   }
 }
