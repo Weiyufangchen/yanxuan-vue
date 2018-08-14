@@ -1,4 +1,5 @@
 <template>
+  <!--右侧菜单列表-->
   <div class="categoryNavRight">
     <div class="banner" style="background-image:url(http://yanxuan.nosdn.127.net/0df7dec6efb8baa06643f5ee04735fe9.jpg?imageView&thumbnail=0x196&quality=75);"></div>
     <div class="cateList">

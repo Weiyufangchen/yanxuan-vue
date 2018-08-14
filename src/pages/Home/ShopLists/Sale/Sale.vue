@@ -1,4 +1,5 @@
 <template>
+  <!--福利社-->
   <div class="sale">
     <a href="javascript:;"></a>
   </div>

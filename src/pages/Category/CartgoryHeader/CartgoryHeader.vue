@@ -1,4 +1,5 @@
 <template>
+  <!--category头部-->
   <div class="hdWraper" style="height: 88px;">
     <div class="hd">
       <div class="itemCateListHd">

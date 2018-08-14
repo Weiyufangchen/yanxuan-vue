@@ -21,15 +21,15 @@
         </div>
         <div class="right-item">
           <img
-            src="http://yanxuan.nosdn.127.net/93fee9483deee0bd03591fd7389f85b4.png?imageView&quality=85&thumbnail=330x330"
+            :src="homeData.flashSaleIndexVO.primaryPicUrl"
             alt="img">
           <div class="price">
             <div class="price-now">
-              <span>￥120</span>
+              <span>￥{{homeData.flashSaleIndexVO.originPrice}}</span>
             </div>
             <div class="price-origin">
               <!--添加伪类做删除线-->
-              <span class="t">￥149</span>
+              <span class="t">￥{{homeData.flashSaleIndexVO.activityPrice}}</span>
             </div>
           </div>
         </div>
@@ -39,8 +39,22 @@
 </template>
 
 <script>
+  import {mapState,mapGetters} from 'vuex'
   export default {
-    name: "Timer"
+    name: "Timer",
+    data() {
+      return {
+
+      }
+    },
+    computed: {
+      ...mapState(['homeData']),
+    },
+    methods: {
+      countDown () {
+        const STARTTIME = this.homeData.flashSaleIndexVO.nextStartTime
+      }
+    }
   }
 </script>
 

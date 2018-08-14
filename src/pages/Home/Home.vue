@@ -11,16 +11,15 @@
 
 <script>
   import BScorll from 'better-scroll'
+  import {mapState} from 'vuex'
   import HomeHeader from './HomeHeader/HomeHeader'
   import Carousel from './Carousel/Carousel'
   import ShopLists from './ShopLists/ShopLists'
   export default {
     name: "Home",
-    computed: {},
     mounted() {
       this.$store.dispatch('getHomeData')
     },
-    methods: {},
     components: {
       HomeHeader,
       Carousel,
@@ -36,4 +35,5 @@
     padding-bottom: 1.30667rem
     margin-right: auto
     margin-left: auto
+    overflow: hidden
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <!--category页面左侧导航栏-->
   <div class="cateNavLeft" style="left:0;">
     <div style="position:relative;height:100%;width:100%;overflow:hidden;">
       <ul class="cateNav">
@@ -90,6 +91,7 @@
       height: .66667rem
       text-align: center
       border: none
+      /*加号选择器，相邻兄弟选择器*/
       +.item
         margin-top .5333rem
       .txt
@@ -114,3 +116,9 @@
           font-size: .48rem
           color: #ab2b2b
 </style>
+<!--
+1. + 选择器
+　如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器。
+２. ~ 选择器
+　　作用是查找某一个指定元素的后面的所有兄弟结点。
+-->

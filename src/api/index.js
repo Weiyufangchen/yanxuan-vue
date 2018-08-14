@@ -5,5 +5,6 @@
 import ajax from './ajax'
 // 获取首页数据
 export const reqHomeData = () => ajax('/homedata')
-// 获取
+export const reqNavData = () => ajax('/navdata')
+export const reqTopicData = () => ajax('/topicdata')
 

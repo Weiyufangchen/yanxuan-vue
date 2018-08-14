@@ -14,7 +14,7 @@
         <li class="list-item"
             @click="addClass(index)"
             v-for="(item, index) in navList" :key="index">
-          <span ref="span">{{item}}</span>
+          <span ref="span" :class='{active: index === 0}'>{{item}}</span>
         </li>
       </ul>
     </div>
@@ -28,7 +28,6 @@
     data () {
       return {
         navList: ['推荐', '居家', '鞋包配饰', '服装', '电器', '洗护', '饮食', '餐厨', '婴童', '文体', '特色区'],
-        currentIndex: 0  // 当前元素的下标
       }
     },
     mounted () {
@@ -41,7 +40,6 @@
     },
     methods: {
       addClass (index) {
-        this.currentIndex = index
         this.$refs.span.forEach(item => {item.className = ''})
         this.$refs.span[index].className += ' active'
       }

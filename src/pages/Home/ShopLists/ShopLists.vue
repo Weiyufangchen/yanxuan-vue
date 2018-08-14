@@ -8,65 +8,20 @@
           <i class="icon icon-go"></i>
         </a>
       </header>
-      <div class="supplying">
+      <div class="supplying" v-show="homeData.tagList">
         <ul class="list">
-          <li class="item">
+          <li class="item" v-for="item in homeData.tagList">
             <a href="javascript:;">
               <div class="cnt">
-                <h4 class="title">CK制造商</h4>
+                <h4 class="title">{{item.name}}</h4>
                 <div>
-                  <span class="price1">25</span>
+                  <span class="price1">{{item.floorPrice}}</span>
                   <span class="price2">元起</span>
                 </div>
-                <i class="icon icon-new"></i>
+                <i class="icon" :class="{'icon-new': item.newOnShelf}"></i>
               </div>
               <img
-                src="http://yanxuan.nosdn.127.net/e57c3fb16c4633c292d8c0e7cb053a6f.png?imageView&thumbnail=355x0&quality=65"
-                alt="supply">
-            </a>
-          </li>
-          <li class="item">
-            <a href="javascript:;">
-              <div class="cnt">
-                <h4 class="title">CK制造商</h4>
-                <div>
-                  <span class="price1">25</span>
-                  <span class="price2">元起</span>
-                </div>
-                <i class="icon icon-new"></i>
-              </div>
-              <img
-                src="http://yanxuan.nosdn.127.net/e57c3fb16c4633c292d8c0e7cb053a6f.png?imageView&thumbnail=355x0&quality=65"
-                alt="supply">
-            </a>
-          </li>
-          <li class="item">
-            <a href="javascript:;">
-              <div class="cnt">
-                <h4 class="title">CK制造商</h4>
-                <div>
-                  <span class="price1">25</span>
-                  <span class="price2">元起</span>
-                </div>
-                <i class="icon icon-new"></i>
-              </div>
-              <img
-                src="http://yanxuan.nosdn.127.net/e57c3fb16c4633c292d8c0e7cb053a6f.png?imageView&thumbnail=355x0&quality=65"
-                alt="supply">
-            </a>
-          </li>
-          <li class="item">
-            <a href="javascript:;">
-              <div class="cnt">
-                <h4 class="title">CK制造商</h4>
-                <div>
-                  <span class="price1">25</span>
-                  <span class="price2">元起</span>
-                </div>
-                <i class="icon icon-new"></i>
-              </div>
-              <img
-                src="http://yanxuan.nosdn.127.net/e57c3fb16c4633c292d8c0e7cb053a6f.png?imageView&thumbnail=355x0&quality=65"
+                :src="item.picUrl"
                 alt="supply">
             </a>
           </li>
@@ -89,201 +44,26 @@
       <div class="goodGrid goodGrid-newItem">
         <div class="inner swiper-container">
           <ul class="list swiper-wrapper">
-            <li class="item swiper-slide">
+            <li class="item swiper-slide" v-for="item in homeData.newItemList">
               <a class="good" href="javascript:;">
                 <div class="hd">
                   <div class="wraper">
                     <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
+                      :src="item.listPicUrl"
                       alt="img">
                   </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
+                  <div class="desc">{{item.name}}</div>
                 </div>
                 <div class="tagWrapper">
                   <p class="status anniversary">七夕推荐</p>
                 </div>
                 <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
+                  <span>{{item.name}}</span>
                 </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
+                <div class="newItemDesc">{{item.simpleDesc}}</div>
                 <div class="price">
                   <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
-                  </div>
-                </div>
-                <span></span>
-              </a>
-            </li>
-            <li class="item swiper-slide">
-              <a class="good" href="javascript:;">
-                <div class="hd">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/cb0bb4fe0a7e641a0d4f8a994f4f8514.png?imageView&quality=65&thumbnail=330x330"
-                      alt="img">
-                  </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status anniversary">七夕推荐</p>
-                </div>
-                <div class="name">
-                  <span>爱浸晨昏 · 玫瑰花束</span>
-                </div>
-                <div class="newItemDesc">每一朵玫瑰，都代表挚爱</div>
-                <div class="price">
-                  <div>
-                    <span>￥88</span>
+                    <span>￥{{item.retailPrice}}</span>
                   </div>
                 </div>
                 <span></span>
@@ -309,28 +89,28 @@
       <div class="goodGrid goodGrid-popularItem">
         <div class="inner swiper-container">
           <ul class="list swiper-wrapper">
-            <li class="item swiper-slide">
+            <li class="item swiper-slide" v-for="(item, index) in homeData.newItemNewUserList" :key="index">
               <a class="good" href="javascript:;">
                 <div class="hd">
                   <div class="wraper">
                     <img
-                      src="http://yanxuan.nosdn.127.net/1c62af3f665ec8a7b9c9723cf1fe3320.png?imageView&quality=65&thumbnail=330x330"
+                      :src='item.listPicUrl'
                       alt="img">
                   </div>
-                  <div class="desc">玫瑰诉情，爱意难休</div>
+                  <div class="desc">{{item.name}}</div>
                 </div>
                 <div class="tagWrapper">
                   <p class="status anniversary">七夕推荐</p>
                   <p class="status gradientPrice">七夕礼物价</p>
                 </div>
                 <div class="name">
-                  <span>情定七夕 · 红玫瑰</span>
+                  <span>{{item.name}}</span>
                 </div>
-                <div class="newItemDesc">玫瑰诉情，爱意难休</div>
+                <div class="newItemDesc">{{item.simpleDesc}}</div>
                 <div class="price">
                   <div>
                     <span>￥</span>
-                    <span>88</span>
+                    <span>{{item.retailPrice}}</span>
                   </div>
                 </div>
                 <span></span>
@@ -355,29 +135,18 @@
       <div class="indexTopics-slide">
         <div class="inner swiper-container">
           <ul class="list swiper-wrapper">
-            <li class="item swiper-slide" style="margin-right: 20.8333px;">
+            <li class="item swiper-slide" style="margin-right: 20.8333px;"
+            v-for="(item, index) in zhuantiData">
               <a class="imgWrap" href="javascript:;">
                 <img
-                  src="https://yanxuan.nosdn.127.net/e1b2996dae287c903ea2816785641376.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75"
+                  :src="item.listPicUrl"
                   alt="">
               </a>
               <div class="line1">
-                <h4 class="title">青汁兑蜂蜜, 轻盈又甜蜜</h4>
-                <span class="price">129元起</span>
+                <h4 class="title">{{item.name}}</h4>
+                <span class="price">{{item.retailPrice}}元起</span>
               </div>
-              <div class="desc">每天来杯青汁蜂蜜水，给生活添一点甜蜜</div>
-            </li>
-            <li class="item swiper-slide" style="margin-right: 20.8333px;">
-              <a class="imgWrap" href="javascript:;">
-                <img
-                  src="https://yanxuan.nosdn.127.net/e1b2996dae287c903ea2816785641376.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75"
-                  alt="">
-              </a>
-              <div class="line1">
-                <h4 class="title">青汁兑蜂蜜, 轻盈又甜蜜</h4>
-                <span class="price">129元起</span>
-              </div>
-              <div class="desc">每天来杯青汁蜂蜜水，给生活添一点甜蜜</div>
+              <div class="desc">{{item.simpleDesc}}</div>
             </li>
           </ul>
         </div>
@@ -389,141 +158,26 @@
         <h3 class="title">居家好物</h3>
         <div class="goodGrid">
           <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
+            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;"
+            v-for="(item, index) in jujiaData">
               <a class="good" href="javascript:;">
                 <div class="hd-jujia">
                   <div class="wraper">
                     <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
+                      :src="item.appListPicUrl"
                       alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
+                    <div class="desc">{{item.name}}</div>
                   </div>
                 </div>
                 <div class="tagWrapper">
                   <p class="status gradientPrice">居家特惠</p>
                 </div>
                 <div class="name">
-                  <span>160*230羊毛手工地毯</span>
+                  <span>{{item.simpleDesc}}</span>
                 </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
+                <div class="newItemDesc">{{item.name}}</div>
                 <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
+                  <span>￥{{item.floorPrice}}</span>
                 </div>
                 <span></span>
                 <div class="specification">
@@ -550,141 +204,26 @@
         <h3 class="title">鞋包配饰好物</h3>
         <div class="goodGrid">
           <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
+            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;"
+                v-for="(item, index) in jujiaData">
               <a class="good" href="javascript:;">
                 <div class="hd-jujia">
                   <div class="wraper">
                     <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
+                      :src="item.appListPicUrl"
                       alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
+                    <div class="desc">{{item.name}}</div>
                   </div>
                 </div>
                 <div class="tagWrapper">
                   <p class="status gradientPrice">居家特惠</p>
                 </div>
                 <div class="name">
-                  <span>160*230羊毛手工地毯</span>
+                  <span>{{item.simpleDesc}}</span>
                 </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
+                <div class="newItemDesc">{{item.name}}</div>
                 <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
+                  <span>￥{{item.floorPrice}}</span>
                 </div>
                 <span></span>
                 <div class="specification">
@@ -697,1295 +236,7 @@
             </li>
             <li class="item item-more">
               <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--服装好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--电器好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--洗护好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--饮食好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--餐厨好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--婴童好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--文体好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
-                <i class="icon icon-goodGridMore"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--特色区好物-->
-    <div class="indexFloor">
-      <div class="titleGoodGrid">
-        <h3 class="title">鞋包配饰好物</h3>
-        <div class="goodGrid">
-          <ul class="list">
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item" style="z-index:6;padding:0rem 0.26666666666666666rem 0.44rem 0.13333333333333333rem ;">
-              <a class="good" href="javascript:;">
-                <div class="hd-jujia">
-                  <div class="wraper">
-                    <img
-                      src="http://yanxuan.nosdn.127.net/05ecfb1f8beff52a1aa4e48b21dda530.png?imageView&quality=65&thumbnail=330x330"
-                      alt="">
-                    <div class="desc">天然肌理感，厚实静音</div>
-                  </div>
-                </div>
-                <div class="tagWrapper">
-                  <p class="status gradientPrice">居家特惠</p>
-                </div>
-                <div class="name">
-                  <span>160*230羊毛手工地毯</span>
-                </div>
-                <div class="newItemDesc">天然肌理感，厚实静音</div>
-                <div class="price">
-                  <span>￥726.75</span>
-                </div>
-                <span></span>
-                <div class="specification">
-                  <div>3</div>
-                  <div>色</div>
-                  <div>可</div>
-                  <div>选</div>
-                </div>
-              </a>
-            </li>
-            <li class="item item-more">
-              <a class="more moreH" href="javascript:;">
-                <p class="txt">更多居家好物</p>
+                <p class="txt">更多鞋包配饰好物</p>
                 <i class="icon icon-goodGridMore"></i>
               </a>
             </li>
@@ -1997,10 +248,37 @@
 </template>
 
 <script>
+  import {mapState, mapGetters} from 'vuex'
+  import Swiper from 'swiper'
   import Timer from './Timer/Timer'
   import Sale from './Sale/Sale'
   export default {
     name: "ShopLists",
+    data() {
+      return {
+        zhuantiData: [],
+        jujiaData: []
+      }
+    },
+    computed: {
+      ...mapState(['homeData']),
+      ...mapGetters(['getJujiaData', 'getZhuantiData']),
+      getJujia () {
+        this.jujiaData = this.getJujiaData
+      },
+      getZhuanti(){
+        this.zhuantiData = this.getZhuantiData
+      }
+    },
+    watch: {
+      homeData () {
+        this.$nextTick(() => {
+          new Swiper('.swiper-container', {
+            loop: false
+          })
+        })
+      }
+    },
     components: {
       Timer,
       Sale,
@@ -2110,8 +388,11 @@
               margin-bottom: .21333rem
               border-radius: 8px;
               overflow: hidden
+              img
+                width: 575px
+                height: 321px
             .line1
-              width: 100%
+              width: 575px
               height: .54667rem;
               margin-bottom: .02667rem;
               zoom: 1

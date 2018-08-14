@@ -39,15 +39,9 @@
 
 <script>
   import Swiper from 'swiper'
-  import 'swiper/dist/css/swiper.min.css'
   import {mapState} from 'vuex'
   export default {
     name: "Carousel",
-    data () {
-      return {
-
-      }
-    },
     computed: {
       ...mapState(['homeData'])
     },
@@ -57,7 +51,10 @@
           new Swiper('.swiper-container-banner',{
             loop: true,
             // 如果需要分页器
-            pagination: '.swiper-pagination',
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            },
           //  是否自动轮播
             autoplay : 2000,
             // autoplayDisableOnInteraction : false
@@ -95,13 +92,14 @@
       .swiper-pagination
         bottom: .4rem
         width: 100%
+        height: .1rem
         .swiper-pagination-bullet
           width: .53333rem
           height: .05333rem
           display: inline-block
           background: #fff
           opacity: .4
-          border-radius: 0
+          border-radius 0
     .service-policy
       background-color: #fff
       .grow
