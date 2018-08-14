@@ -1,16 +1,24 @@
 <template>
     <div class="indexFloor">
-      <div class="swiper-container-banner">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="width: 750px"
-          v-for="item in homeData.cateList" :key="item.id">
+      <div class="carousel">
+        <!--<div class="swiper-wrapper">-->
+          <!--<div class="swiper-slide" style="width: 750px"-->
+          <!--v-for="item in homeData.cateList" :key="item.id">-->
+            <!--<a href="javascript:;">-->
+              <!--<img :src="item.bannerUrl" alt="image">-->
+            <!--</a>-->
+          <!--</div>-->
+        <!--</div>-->
+        <swiper :options="swiperOption" class="swiper-wrapper">
+          <swiper-slide class="swiper-slide" style="width: 750px"
+               v-for="item in homeData.cateList" :key="item.id">
             <a href="javascript:;">
               <img :src="item.bannerUrl" alt="image">
             </a>
-          </div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+          </swiper-slide>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
       </div>
       <div class="service-policy">
         <ul class="grow">
@@ -40,29 +48,47 @@
 <script>
   import Swiper from 'swiper'
   import {mapState} from 'vuex'
+
   export default {
     name: "Carousel",
+    data() {
+      return {
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          // loop: true,
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 1000,
+            disableOnInteraction: true
+          }
+        }
+      }
+    },
     computed: {
       ...mapState(['homeData'])
     },
     watch: {
-      homeData(val){
+      /*homeData(val) {
         this.$nextTick(() => {
-          new Swiper('.swiper-container-banner',{
+          new Swiper('.swiper-container-banner', {
             loop: true,
-            // 如果需要分页器
+            zoom: true,
             // 如果需要分页器
             pagination: {
               el: '.swiper-pagination',
             },
-          //  是否自动轮播
-            autoplay : 2000,
+            //  是否自动轮播
+            autoplay: 2000,
             // autoplayDisableOnInteraction : false
           })
         })
-      }
+      }*/
     }
-  }
+  };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
@@ -71,7 +97,7 @@
     margin-top 148px
     margin-bottom .2667rem
     background-color: #fff
-    .swiper-container-banner
+    .carousel
       width: 100%
       height: 5.333rem
       position: relative
