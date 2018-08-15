@@ -1,15 +1,7 @@
 <template>
     <div class="indexFloor">
-      <div class="carousel">
-        <!--<div class="swiper-wrapper">-->
-          <!--<div class="swiper-slide" style="width: 750px"-->
-          <!--v-for="item in homeData.cateList" :key="item.id">-->
-            <!--<a href="javascript:;">-->
-              <!--<img :src="item.bannerUrl" alt="image">-->
-            <!--</a>-->
-          <!--</div>-->
-        <!--</div>-->
-        <swiper :options="swiperOption" class="swiper-wrapper">
+      <div id="carousel">
+        <swiper v-if="homeData.cateList.length" :options="swiperOption" class="swiper-wrapper">
           <swiper-slide class="swiper-slide" style="width: 750px"
                v-for="item in homeData.cateList" :key="item.id">
             <a href="javascript:;">
@@ -46,7 +38,7 @@
 </template>
 
 <script>
-  import Swiper from 'swiper'
+  import 'swiper/dist/css/swiper.css'
   import {mapState} from 'vuex'
 
   export default {
@@ -58,36 +50,19 @@
             el: '.swiper-pagination',
             clickable: true
           },
-          // loop: true,
-          spaceBetween: 30,
+          loop: true,
+          // spaceBetween: 30,
           centeredSlides: true,
           autoplay: {
-            delay: 1000,
-            disableOnInteraction: true
-          }
+            delay: 2000,
+            disableOnInteraction: false
+          },
         }
       }
     },
     computed: {
       ...mapState(['homeData'])
     },
-    watch: {
-      /*homeData(val) {
-        this.$nextTick(() => {
-          new Swiper('.swiper-container-banner', {
-            loop: true,
-            zoom: true,
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-            //  是否自动轮播
-            autoplay: 2000,
-            // autoplayDisableOnInteraction : false
-          })
-        })
-      }*/
-    }
   };
 </script>
 
@@ -97,7 +72,7 @@
     margin-top 148px
     margin-bottom .2667rem
     background-color: #fff
-    .carousel
+    #carousel
       width: 100%
       height: 5.333rem
       position: relative
@@ -120,6 +95,7 @@
         width: 100%
         height: .1rem
         .swiper-pagination-bullet
+          position: absolute
           width: .53333rem
           height: .05333rem
           display: inline-block

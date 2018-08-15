@@ -9,9 +9,11 @@
         <i class="icon icon-go" v-show="showIcon"></i>
       </a>
     </header>
-    <header class="hd-two" v-else>
+    <header class="hd-two"
+      :style="'background: url(' + bgUrl + ')'"
+            v-else>
       <a class="more" href="javascript:;">
-        <span>新品首发</span>
+        <span>{{headerTitle}}</span>
         <div class="all">
           <span class="wrap">
             <span>查看全部</span>
@@ -28,6 +30,8 @@
     name: "ModelHeader",
     props: {
       headerType: Number,  // 接收一个number来确认显示哪种header样式
+      headerTitle: String, // 接收一个模板头部的标题
+      bgUrl: String,
       showIcon: Boolean  // 接收一个布尔值来确认是否显示箭头图标
     }
   }
@@ -58,7 +62,6 @@
         width: .4rem;
         height: .4rem
   .hd-two
-    background: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap-d4f7b37e32.png)
     background-size: 10rem 3.46667rem
     height: 3.46667rem
     margin-bottom: .42667rem

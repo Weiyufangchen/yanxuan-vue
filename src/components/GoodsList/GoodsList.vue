@@ -3,14 +3,10 @@
 -->
 <template>
   <div>
-    <ModelHeader :headerType="headerType"/>
     <div class="goodGrid goodGrid-goodsList">
-
-      <div class="inner swiper-container">
-
-        <ul class="list swiper-wrapper">
-
-          <li class="item swiper-slide" v-for="item in goodsList">
+      <div class="inner swiper-container-newItem">
+        <swiper :options="swiperOption" class="list swiper-wrapper">
+          <swiper-slide class="item swiper-slide" v-for="item in newGoodsData">
             <a class="good" href="javascript:;">
               <div class="hd">
                 <div class="wraper">
@@ -32,92 +28,31 @@
               </div>
               <span></span>
             </a>
-          </li>
-
-          <!--<li class="item swiper-slide more">
+          </swiper-slide>
+          <swiper-slide class="item swiper-slide more">
             <a href="javascript:;" style="display:block; width:100%; height:100%;">
               <span class="text">查看全部</span>
             </a>
-          </li>-->
-
-        </ul>
+          </swiper-slide>
+        </swiper>
       </div>
-      <!--<swiper :options="swiperOption" class="inner swiper-container">-->
-
-        <!--<ul class="list swiper-wrapper">-->
-
-          <!--<li class="item swiper-slide" v-for="item in goodsList">-->
-            <!--<a class="good" href="javascript:;">-->
-              <!--<div class="hd">-->
-                <!--<div class="wraper">-->
-                  <!--<img :src="item.listPicUrl">-->
-                <!--</div>-->
-                <!--<div class="desc">{{item.name}}</div>-->
-              <!--</div>-->
-              <!--<div class="tagWrapper">-->
-                <!--<p class="status anniversary">七夕推荐</p>-->
-              <!--</div>-->
-              <!--<div class="name">-->
-                <!--<span>{{item.name}}</span>-->
-              <!--</div>-->
-              <!--<div class="newItemDesc">{{item.simpleDesc}}</div>-->
-              <!--<div class="price">-->
-                <!--<div>-->
-                  <!--<span>￥{{item.retailPrice}}</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<span></span>-->
-            <!--</a>-->
-          <!--</li>-->
-
-          <!--&lt;!&ndash;<li class="item swiper-slide more">-->
-            <!--<a href="javascript:;" style="display:block; width:100%; height:100%;">-->
-              <!--<span class="text">查看全部</span>-->
-            <!--</a>-->
-          <!--</li>&ndash;&gt;-->
-
-        <!--</ul>-->
-      <!--</swiper>-->
     </div>
   </div>
 </template>
 
 <script>
-  import Swiper from 'swiper'
-  import ModelHeader from './../ModelHeader/ModelHeader'
-
   export default {
     name: "GoodsList",
     props: {
       newGoodsData: Array,
-      popularGoodsData: Array,
-      goodsType: Boolean  // 接收一个布尔值，true表示渲染新品数据，false表示渲染人气商品数据
     },
     data() {
       return {
         headerType: 2,
         swiperOption: {
-          pagination: '.swiper-pagination',
-          loop: true,
-          autoplay: true
+          slidesPerView: 'auto',
+          centeredSlides: false,
         }
-      }
-    },
-    components: {
-      ModelHeader
-    },
-    mounted() {
-      /*this.$nextTick(() => {
-        new Swiper('.swiper-container', {
-          // stopOnLastSlide: true
-          zoom: true,
-          slidesPerView: 3
-        })
-      })*/
-    },
-    computed: {
-      goodsList() {
-        return this.goodsType ? this.newGoodsData : this.popularGoodsData
       }
     }
   };
@@ -275,7 +210,7 @@
             background-size: 100% 100%
             width: .89333rem
             height: .89333rem
-  .goodGrid-goodsList, .goodGrid-goodsList .swiper-container
+  .goodGrid-goodsList, .goodGrid-goodsList .swiper-container-newItem
     height: 6.4rem
     .list
       overflow: visible
