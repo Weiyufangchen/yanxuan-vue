@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="loginWrap" style="height: 1246px;display: none;">
+    <div class="loginWrap" style="height: 1246px;">
       <div class="login-type">
         <!--登录按钮-->
         <div class="container">
@@ -66,7 +66,7 @@
         </ul>
       </div>
     </div>
-    <div class="loginWrap-1" style="height: 1246px;">
+    <div class="loginWrap-1" style="height: 1246px;display: none;">
       <div class="loginContainer loginContainer-1">
         <div class="view" style="display: block;">
           <div class="logo">

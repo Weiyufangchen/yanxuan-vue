@@ -38,11 +38,11 @@
     name: "FooterGuide",
     methods: {
       // 跳转路由
-      goto(path) {
+      goto(path = '/home') { // 设置一个默认参数，也就是上来就给默认路由加active样式
         this.$router.replace(path)
       },
     //  动态显示当前路由图标
-      isCurrent (path) {
+      isCurrent (path='/') {
         return this.$route.path === path
       }
     }

@@ -12,13 +12,47 @@
     <Split/>
     <!--新品首发-->
     <div class="template">
-      <ModelHeader :headerType="headerType" :headerTitle="headerTitle[0]" :bgUrl="bgUrl[0]"/>
-      <GoodsList :newGoodsData="homeData.newItemNewUserList"/>
+      <ModelHeader :headerType="2" :headerTitle="headerTitle[0]" :bgUrl="bgUrl[0]"/>
+      <!--<GoodsList :newGoodsData="homeData.newItemNewUserList"/>-->
+      <div class="goodGrid goodGrid-goodsList">
+        <div class="inner swiper-container-popularItem">
+          <swiper :options="swiperOption" class="list swiper-wrapper">
+            <swiper-slide class="item swiper-slide" v-for="(item, index) in homeData.newItemNewUserList" :key="index">
+              <a class="good" href="javascript:;">
+                <div class="hd">
+                  <div class="wraper">
+                    <img :src="item.listPicUrl">
+                  </div>
+                  <div class="desc">{{item.name}}</div>
+                </div>
+                <div class="tagWrapper">
+                  <p class="status anniversary">七夕推荐</p>
+                </div>
+                <div class="name">
+                  <span>{{item.name}}</span>
+                </div>
+                <div class="newItemDesc">{{item.simpleDesc}}</div>
+                <div class="price">
+                  <div>
+                    <span>￥{{item.retailPrice}}</span>
+                  </div>
+                </div>
+                <span></span>
+              </a>
+            </swiper-slide>
+            <swiper-slide class="item swiper-slide more">
+              <a href="javascript:;" style="display:block; width:100%; height:100%;">
+                <span class="text">查看全部</span>
+              </a>
+            </swiper-slide>
+          </swiper>
+        </div>
+      </div>
     </div>
     <Split/>
     <!--人气推荐-->
     <div class="template">  <!--加一个类template，给组件添加背景色白色-->
-      <ModelHeader :headerType="headerType" :headerTitle="headerTitle[1]" :bgUrl="bgUrl[1]"/>
+      <ModelHeader :headerType="2" :headerTitle="headerTitle[1]" :bgUrl="bgUrl[1]"/>
       <div class="goodGrid goodGrid-goodsList">
         <div class="inner swiper-container-popularItem">
           <swiper :options="swiperOption" class="list swiper-wrapper">
@@ -61,6 +95,9 @@
     <!--福利社-->
     <Sale/>
     <Split/>
+    <!--专题精选-->
+    <ModelHeader/>
+    <Split/>
   </div>
 </template>
 
@@ -85,6 +122,7 @@
           'http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap-d4f7b37e32.png',
           'http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap2-d626e0b52a.png'
         ],
+        bg: ['#D8E5F1','#F4E9CB'],
         swiperOption: {
           slidesPerView: 'auto',
           centeredSlides: false

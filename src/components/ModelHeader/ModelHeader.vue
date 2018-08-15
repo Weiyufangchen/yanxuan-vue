@@ -14,7 +14,7 @@
             v-else>
       <a class="more" href="javascript:;">
         <span>{{headerTitle}}</span>
-        <div class="all">
+        <div class="all" style="background: #D8E5F1">
           <span class="wrap">
             <span>查看全部</span>
             <i class="arrow-right"></i>
@@ -79,7 +79,6 @@
         height: .74667rem
         font-size: .37333rem
         line-height: .74667rem
-        background: #D8E5F1
         .wrap
           width: 1.70667rem
           display: inline-block

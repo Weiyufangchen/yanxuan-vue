@@ -1,7 +1,7 @@
 <!--首页品牌制造商模块-->
 <template>
   <div>
-    <ModelHeader :showIcon="showIcon" :headerType="headerType"/>
+    <ModelHeader :showIcon="showIcon" :headerType="1"/>
     <div class="supplying">
       <ul class="list">
         <li class="item" v-for="(item, index) in supplyData" :key="index">
