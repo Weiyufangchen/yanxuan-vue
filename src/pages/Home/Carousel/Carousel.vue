@@ -1,7 +1,7 @@
 <template>
     <div class="indexFloor">
       <div id="carousel">
-        <swiper v-if="homeData.cateList.length" :options="swiperOption" class="swiper-wrapper">
+        <swiper v-if="homeData.cateList && homeData.cateList.length" :options="swiperOption" class="swiper-wrapper">
           <swiper-slide class="swiper-slide" style="width: 750px"
                v-for="item in homeData.cateList" :key="item.id">
             <a href="javascript:;">
@@ -38,7 +38,6 @@
 </template>
 
 <script>
-  import 'swiper/dist/css/swiper.css'
   import {mapState} from 'vuex'
 
   export default {
@@ -70,7 +69,6 @@
   @import '../../../assets/stylus/mixins.styl'
   .indexFloor
     margin-top 148px
-    margin-bottom .2667rem
     background-color: #fff
     #carousel
       width: 100%

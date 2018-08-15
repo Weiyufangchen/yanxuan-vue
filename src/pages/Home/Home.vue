@@ -2,28 +2,27 @@
   <div class="home">
     <!--首页header-->
     <HomeHeader/>
-
     <!--首页轮播图-->
     <Carousel/>
-
+    <Split/>
     <!--首页商品制造商直供-->
     <div class="template">
       <Supply :supplyData="homeData.tagList"/>
     </div>
-
-    <!--新品首发-->   <!-- 使用了两次 -->
+    <Split/>
+    <!--新品首发-->
     <div class="template">
       <ModelHeader :headerType="headerType" :headerTitle="headerTitle[0]" :bgUrl="bgUrl[0]"/>
       <GoodsList :newGoodsData="homeData.newItemNewUserList"/>
     </div>
-
+    <Split/>
     <!--人气推荐-->
-    <div class="template">
+    <div class="template">  <!--加一个类template，给组件添加背景色白色-->
       <ModelHeader :headerType="headerType" :headerTitle="headerTitle[1]" :bgUrl="bgUrl[1]"/>
       <div class="goodGrid goodGrid-goodsList">
         <div class="inner swiper-container-popularItem">
           <swiper :options="swiperOption" class="list swiper-wrapper">
-            <swiper-slide class="item swiper-slide" v-for="item in homeData.popularItemList">
+            <swiper-slide class="item swiper-slide" v-for="(item, index) in homeData.popularItemList" :key="index">
               <a class="good" href="javascript:;">
                 <div class="hd">
                   <div class="wraper">
@@ -55,7 +54,13 @@
         </div>
       </div>
     </div>
-
+    <Split/>
+    <!--定时器限时购-->
+    <Timer/>
+    <Split/>
+    <!--福利社-->
+    <Sale/>
+    <Split/>
   </div>
 </template>
 
@@ -67,6 +72,8 @@
   import Supply from './Supply/Supply'
   import GoodsList from '../../components/GoodsList/GoodsList'
   import ModelHeader from '../../components/ModelHeader/ModelHeader'
+  import Timer from './Timer/Timer'
+  import Sale from './Sale/Sale'
 
   export default {
     name: "Home",
@@ -96,7 +103,9 @@
       Carousel,
       Supply,
       GoodsList,
-      ModelHeader
+      ModelHeader,
+      Timer,
+      Sale
     }
   };
 </script>
@@ -110,7 +119,6 @@
     margin-left: auto
     overflow: hidden
   .template
-    margin-bottom: 0.26667rem
     background-color: #fff
   .goodGrid
     background-color: #fff
@@ -332,7 +340,7 @@
         display: block;
         border: .10667rem solid #F4F4F4;
         width: 3.73333rem;
-        height: 3.73333rem;
+        height: 3.86667rem;
         margin: 0 .4rem;
         line-height: 3.73333rem;
         text-align: center

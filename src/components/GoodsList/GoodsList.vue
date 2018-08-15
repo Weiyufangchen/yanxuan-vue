@@ -6,7 +6,7 @@
     <div class="goodGrid goodGrid-goodsList">
       <div class="inner swiper-container-newItem">
         <swiper :options="swiperOption" class="list swiper-wrapper">
-          <swiper-slide class="item swiper-slide" v-for="item in newGoodsData">
+          <swiper-slide class="item swiper-slide" v-for="(item, index) in newGoodsData" :key="index">
             <a class="good" href="javascript:;">
               <div class="hd">
                 <div class="wraper">
@@ -281,7 +281,7 @@
         display: block;
         border: .10667rem solid #F4F4F4;
         width: 3.73333rem;
-        height: 3.73333rem;
+        height: 3.86667rem;
         margin: 0 .4rem;
         line-height: 3.73333rem;
         text-align: center
