@@ -9,9 +9,7 @@
         <i class="icon icon-go" v-show="showIcon"></i>
       </a>
     </header>
-    <header class="hd-two"
-      :style="'background: url(' + bgUrl + ')'"
-            v-else>
+    <header class="hd-two" :style="'background: url(' + bgUrl + ')'" v-else>
       <a class="more" href="javascript:;">
         <span>{{headerTitle}}</span>
         <div class="all" style="background: #D8E5F1">

@@ -15,7 +15,7 @@
       <ModelHeader :headerType="2" :headerTitle="headerTitle[0]" :bgUrl="bgUrl[0]"/>
       <!--<GoodsList :newGoodsData="homeData.newItemNewUserList"/>-->
       <div class="goodGrid goodGrid-goodsList">
-        <div class="inner swiper-container-popularItem">
+        <div class="inner swiper-container-newItem">
           <swiper :options="swiperOption" class="list swiper-wrapper">
             <swiper-slide class="item swiper-slide" v-for="(item, index) in homeData.newItemNewUserList" :key="index">
               <a class="good" href="javascript:;">
@@ -307,7 +307,7 @@
             background-size: 100% 100%
             width: .89333rem
             height: .89333rem
-  .goodGrid-goodsList, .goodGrid-goodsList .swiper-container-popularItem
+  .goodGrid-goodsList, .goodGrid-goodsList .swiper-container-popularItem, .goodGrid-goodsList .swiper-container-newItem
     height: 6.4rem
     .list
       overflow: visible
