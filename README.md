@@ -1,21 +1,48 @@
-# gshop
+## **第1章：准备**
 
-> A Vue.js project
+### 1.1 **项目描述**
 
-## Build Setup
+1)  此项目为 **购物Shopping App（仿照网易严选）**
 
-``` bash
-# install dependencies
+2)  包括 **首页，识物，分类，购物车，个人** 等多个子模块
+
+3)  使用 **vue全家桶 + ES6 + Webpack** 等前端最新技术
+
+4)  采用 **组件化、模块化、工程化** 的模式开发
+
+# **第2章: 应用开发详解**
+
+## **2.1. 开启项目开发**
+
+### **2.1.1.** **使用vue-cli(脚手架)搭建项目**
+
+1) Vue-cli是vue官方提供的用于搭建基于vue+webpack+es6项目的脚手架工具
+
+2) 在线文档: <https://github.com/vuejs/vue-cli>
+
+3) 操作:
+
+```
+npm install -g vue-cli
+vue init webpack gshop
+cd gshop
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+访问: localhost:8080
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+
+
+
+
+### 组件间的空白间隙，为什么要提取成分割层组件？
+
+```
+正常情况下：
+	如果不提取，也就是说，每个组件的包裹器，都要写一行 margin-top/bottom 来控制，而且是重复一行代码，各个组件都需要写，不利于对需求的更改，创建分割层组件之后，放在全局，只需要各个组件间引入，即可，更改margin，只需要更改分割层组件的样式，修改一处，即可达到效果。同时也便于维护代码，即组件化思想。
+最终目的：
+	提高代码的复用性，使其便于维护。
+```
+
